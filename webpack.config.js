@@ -40,12 +40,16 @@ module.exports = {
                 test: /\.svg$/,
                 type: 'asset/resource',
                 generator: {
-                    filename: path.join('icons', '[name].[contenthash][ext]'),
+                    filename: path.join('images/svg', '[name].[contenthash][ext]'),
                 },
             },
             {
                 test: /\.(woff2?|eot|ttf|otf)$/i,
                 type: 'asset/resource',
+                generator: {
+                    filename: path.join('fonts', '[name][ext]'),
+                    //filename: 'fonts/[name][ext]' // все шрифты в dist/font
+                }
             },
         ],
     },
